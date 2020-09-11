@@ -20,8 +20,8 @@ def prep_data(querry, database):
 				tmpList.append(seq[i:i+3])
 	
 	kmere_base[1] = tmpList
-	print("Querry :")
-	print(kmere_base)
+	#print("Querry :")
+	#print(kmere_base)
 	x=1
 	seq="" #Tmp str using to merge multiple line of a sigle sequence
 	with open(database, "r") as fillin:
@@ -43,7 +43,7 @@ def prep_data(querry, database):
 				continue
 			else: 
 				seq = seq+line.strip() #merge multiple line of the same sequence		
-	print(kmere_base)
+	#print(kmere_base)
 	return kmere_base
 
 
@@ -52,7 +52,6 @@ if __name__ == "__main__":
 	parser.add_argument("Querry_file", help = "Fasta querry file ", type=str)
 	parser.add_argument("Database_file", help = "Fasta Database file ", type=str)
 	args = parser.parse_args()
-
 	if args.Database_file[-6:] != '.fasta' or args.Querry_file[-6:] != '.fasta': #Vérification de l'extension pdb
 		print("Please select file with fasta extension")
 	else: 
