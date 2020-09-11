@@ -9,7 +9,7 @@ def kmer_to_dict(dict_ferdi):
 				dict_occurence[kmer_q].append(query_list)
 		else:
 			for position, kmer in enumerate(dict_ferdi[clef]):
-				for kmer_query in dict_ferdi["1"]:
+				for kmer_query in dict_ferdi[1]:
 					if kmer == kmer_query:
 						match = [clef, position + 1]				
 						if kmer not in dict_occurence.keys():
