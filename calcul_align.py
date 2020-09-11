@@ -5,17 +5,16 @@ def search_seq(dict_kmer, dict_seq):
 	for cles in dict_kmer.keys():
 		line = dict_kmer[cles]
 		for rang in range(0,len(line)-1):
-			if line[rang][0] != 1:
-				return
-			for second_rang in range(rang+1,len(line)-1):
-				if line[rang][0]!=line[rang+1][0]:
-					seq_first = line[rang]
-					seq_second = line[rang+1]
-					list_fin = find_kmer(dict_seq, seq_first, seq_second)
-					print("diff")
-					nom = string(list_fin[0])+"/"+string(list_fin[1])
-					dict_score[nom] = dict_score[nom].append(list_fin[2])
-
+			if line[rang][0] == 1:
+				for second_rang in range(rang+1,len(line)-1):
+					if line[rang][0]!=line[rang+1][0]:
+						seq_first = line[rang]
+						seq_second = line[rang+1]
+						list_fin = find_kmer(dict_seq, seq_first, seq_second)
+						print("diff")
+						nom = string(list_fin[0])+"/"+string(list_fin[1])
+						dict_score[nom] = dict_score[nom].append(list_fin[2])
+	print(dict_score)
 	return(dict_score)
 
 
