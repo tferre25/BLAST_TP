@@ -50,7 +50,7 @@ def prep_data(querry, database):
 	print(kmere_base)
 	return kmere_base
 
-
+"""
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser()
 	parser.add_argument("Querry_file", help = "Fasta Database file ", type=str)
@@ -61,3 +61,5 @@ if __name__ == "__main__":
 		print("Please select file with fasta extension")
 	else: 
 		database = prep_data(args.Querry_file , args.Database_file)
+
+"""
