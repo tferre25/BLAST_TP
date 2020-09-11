@@ -19,9 +19,21 @@ def search_seq(dict_kmer, dict_seq):
 						#print(list_fin)
 						#print("diff")
 						nom = str(list_fin[0])+"/"+str(list_fin[1])
+
+						temp = []
+						if (nom in dict_score):
+							print("deja")
+							print(nom)
+							print(dict_score[nom])
+							temp = list(dict_score[nom])
+						else:
+							print("apparition")
+							print(nom)
+							dict_score[nom] = []
 						#temp = list(dict_score[nom])
 						#dict_score[nom] = temp.append(list_fin[2])
-						dict_score[nom] = list_fin[2]
+
+						dict_score[nom] = temp.append(list_fin[2])
 			else:
 				break
 	#print(dict_score)
