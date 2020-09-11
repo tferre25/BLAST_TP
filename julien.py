@@ -19,7 +19,7 @@ def kmer_to_dict(dict_ferdi):
 	
 	
 	
-if __name__ == "__main__":
+#if __name__ == "__main__":
 
 """
 	test = {}
