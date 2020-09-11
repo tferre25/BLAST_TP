@@ -4,7 +4,6 @@ import argparse
 def prep_data(querry, database):
 	kmere_base={}
 	tmpList = []
-
 	#Lecture du fichier querry
 	with open(querry, "r") as querry:
 		lines = querry.readlines()
@@ -43,17 +42,14 @@ def prep_data(querry, database):
 				#print(x)
 				continue
 			else: 
-				seq = seq+line.strip() #merge multiple line of the same sequence
-				
-
-				
+				seq = seq+line.strip() #merge multiple line of the same sequence		
 	print(kmere_base)
 	return kmere_base
 
 
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser()
-	parser.add_argument("Querry_file", help = "Fasta Database file ", type=str)
+	parser.add_argument("Querry_file", help = "Fasta querry file ", type=str)
 	parser.add_argument("Database_file", help = "Fasta Database file ", type=str)
 	args = parser.parse_args()
 
